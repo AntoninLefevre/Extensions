@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+
+    "name": "__MSG_extensionName__",
+    "description": "Browser action extension.",
+    "version": "1.0",
+    "default_locale": "fr",
+    "permissions": [],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup" : "popup.html"
+    }
+}
