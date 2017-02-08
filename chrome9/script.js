@@ -3,15 +3,18 @@ localStorage['timeleft'] = localStorage['time'];
 document.getElementById("time").innerHTML = "Temps restant: environ " + localStorage['timeleft'] * 60 + " secondes";
 
 
-setInterval(function(){
-    if(localStorage['timeleft'] > 0){
+myInterval = setInterval(function(){
     localStorage['timeleft']--;
     document.getElementById("time").innerHTML = "Temps restant: environ " + localStorage['timeleft'] * 60 + " secondes";
-    } else {
+    if(localStorage['timeleft'] < 0) {
         monalert();
+        clearInterval(myInterval);
     }
 }, 1000);
 
+myInterval;
+
 function monalert(){
-    alert("STOP");
+    alert("Stop !!!");
+    setInterval(monalert(), 500);
 }
