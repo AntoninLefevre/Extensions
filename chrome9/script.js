@@ -1,8 +1,17 @@
-if(!localStorage['hello']){
-    localStorage['hello'] = 1;
-    document.write("Bonjour pour la première fois");
-} else {
-    localStorage['hello']++;
-    document.writeln("Bonjour pour la " + localStorage['hello'] + "ème fois");
-}
+localStorage['timeleft'] = localStorage['time'];
 
+document.getElementById("time").innerHTML = "Temps restant: environ " + localStorage['timeleft'] * 60 + " secondes";
+
+
+setInterval(function(){
+    if(localStorage['timeleft'] > 0){
+    localStorage['timeleft']--;
+    document.getElementById("time").innerHTML = "Temps restant: environ " + localStorage['timeleft'] * 60 + " secondes";
+    } else {
+        monalert();
+    }
+}, 1000);
+
+function monalert(){
+    alert("STOP");
+}

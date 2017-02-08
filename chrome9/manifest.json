@@ -5,6 +5,13 @@
     "description": "Browser action extension.",
     "version": "2.0",
 
+    "permissions": ["unlimitedStorage"],
+    "options_page": "pageopt.html",
+
+    "background": {
+        "scripts": ["background.js"]
+    },
+
     "browser_action": {
         "default_icon": "icon.png",
         "default_popup" : "popup.html"
